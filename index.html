@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#3e2723" />
+  <meta name="description" content="College attendance tracker — 75% exam eligibility, 85% internals band, per subject and overall." />
+  <title>Campus Ledger — Attendance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="brand">
+      <p class="brand-kicker">For college</p>
+      <h1 class="brand-title">Campus Ledger</h1>
+      <p class="brand-sub">Track every subject, see exam eligibility at 75% and the 85% band for internals / +5 marks — plus how many classes to make up or safely skip.</p>
+    </header>
+
+    <div class="rules" role="note">
+      <span class="rule-chip"><strong>75%</strong> — write exams</span>
+      <span class="rule-chip"><strong>85%</strong> — internals / +5</span>
+    </div>
+
+    <section class="panel" id="overall-panel" aria-live="polite"></section>
+
+    <div class="section-head">
+      <h2 class="section-title">Subjects</h2>
+      <span class="section-hint">Saved on this device</span>
+    </div>
+
+    <button type="button" class="btn-primary" onclick="addSubject()">
+      <span class="plus" aria-hidden="true">+</span>
+      Add subject
+    </button>
+
+    <div id="subjects"></div>
+    <p id="empty-placeholder" class="empty-state" hidden>No subjects yet. Add one and enter attended vs total classes held.</p>
+
+    <p class="footnote">Projections assume each new class is either fully attended or fully missed. Your college may round differently — use this as a guide.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
